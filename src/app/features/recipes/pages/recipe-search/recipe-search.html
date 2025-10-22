@@ -1,0 +1,19 @@
+<div class="recipe-search">
+    <h2>Recetas sugeridas</h2>
+
+    <p *ngIf="loading">
+        <p-progressSpinner></p-progressSpinner>
+    </p>
+
+    <p *ngIf="errorMsg">{{ errorMsg }}</p>
+
+    <div *ngIf="!loading && recipes.length > 0" class="cards">
+        <p-card *ngFor="let rec of recipes" header="{{ rec.title }}">
+            <img [src]="rec.image" alt="{{ rec.title }}" class="card-image" />
+        </p-card>
+    </div>
+
+    <p *ngIf="!loading && recipes.length === 0">
+        No se encontraron recetas con esos ingredientes.
+    </p>
+</div>

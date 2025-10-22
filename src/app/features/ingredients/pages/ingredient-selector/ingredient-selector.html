@@ -1,0 +1,8 @@
+<div class="ingredient-selector">
+    <h2>¿Qué ingredientes tienes?</h2>
+    <p-multiSelect [options]="availableIngredients" [(ngModel)]="selectedIngredients"
+        placeholder="Selecciona ingredientes">
+    </p-multiSelect>
+
+    <button pButton label="Buscar recetas" (click)="buscarRecetas()"></button>
+</div>
